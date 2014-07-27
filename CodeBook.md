@@ -1,21 +1,71 @@
-This file contains description of the logic used in analyzing following data set for this project
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+Following are vaiables of tidy data set obtained at the end of analysis. activity and subject are integers. activityLabel is text. All other variable are numeric vaiables obtained from the average of each source variable for each activity and each subject. tidydata.Rd file contain more description of dataset. 
 
-Activity labels are loaded from ./UCI HAR Dataset/activity_labels.txt 
-
-features names are loaded from ./UCI HAR Dataset/features.txt
-
-regular expression is used to obtain ids of features that has mean() or std() in thier names. this info is stored in meanStdIds.
-
-Train and test data loated in various objects and finally merged to mssmartPhoneData. This data set now contains both train and test data for measurements on the mean and strandard deviation for each measurement. rbind and cbind functions are used to merge train and test datasets. 
-
-Activity descriptions are added as an aditional column using merge funciton. This is stored in data frame mssmartPhoneData. 
-
-ddply is used to generate independent tidy data set from mssmartPhoneData. result is stored in phoneDataAvg and contians average of each variable for each activity and each subject. 
-
-Both mssmartPhoneData amd phoneDataAvg data sets are labeled with variable names loaded from features.txt 
-
-Tidy dataset and its column names are outputed in files UCIHARTidyDataset.txt and features.txt
-
-Dataframe is also retured by this fuction. 
-
+activity : int
+subject : int
+activityLabel : Factor
+tBodyAcc-mean()-X : num
+tBodyAcc-mean()-Y : num
+tBodyAcc-mean()-Z : num
+tBodyAcc-std()-X : num
+tBodyAcc-std()-Y : num
+tBodyAcc-std()-Z : num
+tGravityAcc-mean()-X : num
+tGravityAcc-mean()-Y : num
+tGravityAcc-mean()-Z : num
+tGravityAcc-std()-X : num
+tGravityAcc-std()-Y : num
+tGravityAcc-std()-Z : num
+tBodyAccJerk-mean()-X : num
+tBodyAccJerk-mean()-Y : num
+tBodyAccJerk-mean()-Z : num
+tBodyAccJerk-std()-X : num
+tBodyAccJerk-std()-Y : num
+tBodyAccJerk-std()-Z : num
+tBodyGyro-mean()-X : num
+tBodyGyro-mean()-Y : num
+tBodyGyro-mean()-Z : num
+tBodyGyro-std()-X : num
+tBodyGyro-std()-Y : num
+tBodyGyro-std()-Z : num
+tBodyGyroJerk-mean()-X : num
+tBodyGyroJerk-mean()-Y : num
+tBodyGyroJerk-mean()-Z : num
+tBodyGyroJerk-std()-X : num
+tBodyGyroJerk-std()-Y : num
+tBodyGyroJerk-std()-Z : num
+tBodyAccMag-mean() : num
+tBodyAccMag-std() : num
+tGravityAccMag-mean() : num
+tGravityAccMag-std() : num
+tBodyAccJerkMag-mean() : num
+tBodyAccJerkMag-std() : num
+tBodyGyroMag-mean() : num
+tBodyGyroMag-std() : num
+tBodyGyroJerkMag-mean() : num
+tBodyGyroJerkMag-std() : num
+fBodyAcc-mean()-X : num
+fBodyAcc-mean()-Y : num
+fBodyAcc-mean()-Z : num
+fBodyAcc-std()-X : num
+fBodyAcc-std()-Y : num
+fBodyAcc-std()-Z : num
+fBodyAccJerk-mean()-X : num
+fBodyAccJerk-mean()-Y : num
+fBodyAccJerk-mean()-Z : num
+fBodyAccJerk-std()-X : num
+fBodyAccJerk-std()-Y : num
+fBodyAccJerk-std()-Z : num
+fBodyGyro-mean()-X : num
+fBodyGyro-mean()-Y : num
+fBodyGyro-mean()-Z : num
+fBodyGyro-std()-X : num
+fBodyGyro-std()-Y : num
+fBodyGyro-std()-Z : num
+fBodyAccMag-mean() : num
+fBodyAccMag-std() : num
+fBodyBodyAccJerkMag-mean()  : num
+fBodyBodyAccJerkMag-std() : num
+fBodyBodyGyroMag-mean() : num
+fBodyBodyGyroMag-std() : num
+fBodyBodyGyroJerkMag-mean() : num
+fBodyBodyGyroJerkMag-std() : num

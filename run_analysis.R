@@ -124,13 +124,18 @@ run_analysis <- function(){
              V543 =  mean(as.numeric(V543))
   )
   
+  names(mssmartPhoneData)[4:69] <- as.character( features[meanStdIds,]$feature)
+  
   ##write data to the file  
   write.table(columnNames,file="features.txt",quote = FALSE,sep = " ",row.names = FALSE,col.names = FALSE)
   write.table(features[meanStdIds,]$feature,file="features.txt",append = TRUE,quote = FALSE,sep = " ",row.names = FALSE,col.names = FALSE)
-  write.table(mssmartPhoneData,file="UCIHARDataset.txt",quote = FALSE,sep = " ",row.names = FALSE,col.names = FALSE)
+  ##write.table(mssmartPhoneData,file="UCIHARDataset.txt",quote = FALSE,sep = " ",row.names = FALSE,col.names = FALSE)
   write.table(phoneDataAvg,file="UCIHARTidyDataset.txt",quote = FALSE,sep = " ",row.names = FALSE,col.names = FALSE)
   
   ## return the both data sets.
-  list(mssmartPhoneData,phoneDataAvg)
+  ## list(mssmartPhoneData,phoneDataAvg)
+  names(phoneDataAvg)[4:69] <- as.character( features[meanStdIds,]$feature)
+  
+  phoneDataAvg
   
 }
