@@ -1,7 +1,7 @@
 Getting and Cleaning Data Course Project Help  
 ======================
 
-Instroduction
+Introduction
 -------------------------
 
 This project is to demonstrate ability to collect, work with, and clean a data set.  
